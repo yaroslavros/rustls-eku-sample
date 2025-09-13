@@ -1,0 +1,19 @@
+[[bin]]
+name = "server"
+path = "src/server.rs"
+
+[[bin]]
+name = "client"
+path = "src/client.rs"
+
+[package]
+name = "rustls-eku-sample"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+gethostname = { version = "1" }
+rcgen = { version = "0", default-features = false, features = ["aws_lc_rs"] }
+tokio = { version = "1", default-features = false, features = ["rt", "rt-multi-thread", "macros", "net", "io-util", "time"] }
+tokio-rustls = { git = "https://github.com/yaroslavros/tokio-rustls" }
+anyhow = { version = "1" }
