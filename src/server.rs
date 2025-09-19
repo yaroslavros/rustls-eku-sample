@@ -11,7 +11,7 @@ async fn pongping(tls: &mut TlsStream<TcpStream>) -> Result<()> {
     let mut plaintext = String::new();
     tls.read_line(&mut plaintext).await?;
     print!("{}", plaintext);
-    tls.write_all(b"Hello from the client\n").await?;
+    tls.write_all(b"Hello from the server\n").await?;
     tls.flush().await?;
     Ok(())
 }
